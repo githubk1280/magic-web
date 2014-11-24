@@ -1,4 +1,4 @@
-package com.tmrasys.controller;
+package com.magic.controller;
 
 import javax.annotation.PostConstruct;
 
@@ -8,8 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.tmrasys.domain.Project;
-import com.tmrasys.service.DataService;
+import com.magic.domain.Project;
+import com.magic.service.DataService;
 
 @Controller
 @RequestMapping("/project")

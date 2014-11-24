@@ -1,10 +1,10 @@
-package com.tmrasys.service;
+package com.magic.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.tmrasys.dao.ProjectDao;
-import com.tmrasys.domain.Project;
+import com.magic.dao.ProjectDao;
+import com.magic.domain.Project;
 
 @Service
 public class DataService {

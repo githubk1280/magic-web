@@ -1,4 +1,4 @@
-package com.tmrasys.domain;
+package com.magic.domain;
 
 import lombok.Data;
 

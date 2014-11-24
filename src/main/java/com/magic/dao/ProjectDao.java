@@ -1,8 +1,8 @@
-package com.tmrasys.dao;
+package com.magic.dao;
 
 import org.springframework.stereotype.Repository;
 
-import com.tmrasys.domain.Project;
+import com.magic.domain.Project;
 
 @Repository
 public interface ProjectDao {

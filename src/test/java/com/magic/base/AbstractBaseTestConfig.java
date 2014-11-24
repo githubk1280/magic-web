@@ -1,4 +1,4 @@
-package com.tmrasys.base;
+package com.magic.base;
 
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
