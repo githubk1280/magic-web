@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="content-type">
-<title>Magic</title>
+<title>Magic-percentage</title>
 <link href="" type="">
 <link href="resources/css/bootstrap.min.css" rel="stylesheet">
 <link href="resources/css/theme.css" rel="stylesheet">
@@ -20,24 +20,20 @@
 				<%@ include file="nav"%>
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h3 class="panel-title">Term</h3>
+						<h3 class="panel-title">Percentage</h3>
 					</div>
 					<div class="panel-body">
 						<div style="width: 250px; display: inline-table">
-							<label for="from">From</label><input type="text"
-								class="form-control" id="from" value="2014-11-20" />
-						</div>
-						<div style="width: 250px; display: inline-table">
-							<label for="to">To</label><input type="text" class="form-control"
-								id="to" value="2014-11-20" />
+							<label for="from">Target</label><input type="text"
+								class="form-control" id="target" value="3" />
 						</div>
 						<div style="width: 150px; display: inline-table">
 							<br />
-							<button type="submit" class="btn btn-default"
+							<button type="submit" class="btn btn-default" id="queryTarget"
 								style="margin-top: 5px;">Query</button>
 						</div>
-						<div style="min-width: 310px; height: 400px; margin: 0 auto"
-							id="container" data-highcharts-chart="10"></div>
+						<div style="min-width: 310px; height: 400px; margin: 0 auto;display:none"
+							id="containerPercentage" data-highcharts-chart="10"></div>
 					</div>
 					<div class="panel-footer"></div>
 				</div>
@@ -47,36 +43,34 @@
 
 	<script type="text/javascript">
 		//&lt;![CDATA[ 
-		function renderChart(dataArray) {
+
+		function renderPercentageChart(dataArray) {
+			var target = dataArray.target;
 			var chart1 = new Highcharts.Chart({
 				//$('#container').highcharts({
 				chart : {
 					type : 'line',
-					renderTo : 'container'
+					renderTo : 'containerPercentage'+target,
 				},
 				title : {
-					text : '近七天数据'
-				},
-				subtitle : {
-					text : new Date().getUTCDate()
+					text : target,
 				},
 				xAxis : {
 					title : {
-						text : 'Term'
+						text : 'Hit Numbers',
 					},
 					tickInterval : 1,
 					celling : 100,
 					min : 0,
-					max : 79
+					max : 18,
 
 				},
 				yAxis : {
 					title : {
-						text : 'Hit Number'
+						text : 'Percentage * 100'
 					},
-					tickInterval : 1,
-					min : 3,
-					max : 18
+					min : 0,
+// 					max : 100
 
 				},
 				plotOptions : {
@@ -87,23 +81,36 @@
 						enableMouseTracking : false
 					}
 				},
-				series : JSON.parse(JSON.parse(dataArray)),
+				series : dataArray.composites,
 			});
 		};
 
 		$(document).ready(function() {
-			$.ajax({
-				url : 'show3',
-				type : 'get',
-				success : function(response) {
-					renderChart(JSON.parse(response).data);
-				},
-				error : function(err) {
-					alert(err.responseText);
-				}
+			$('#queryTarget').on('click',function(){
+				var target = $('#target').val();
+				$.ajax({
+					url : 'showPercentage/'+target,
+					type : 'get',
+					success : function(response) {
+						var resArray = JSON.parse(JSON.parse(JSON.parse(response).data));
+						var currSVG = $('#containerPercentage');
+						var cloneSVG = currSVG.clone();
+						cloneSVG.attr('id','containerPercentage'+target);
+						cloneSVG.css('display','block'); 
+// 						currSVG.prepend(cloneSVG);
+						currSVG.parent().append(cloneSVG);
+						renderPercentageChart(resArray);
+					},
+					error : function(err) {
+						alert(err.responseText);
+					}
+				});
+			});		
+			$('.nav li').each(function(index,val){
+				$(val).removeClass("active");
+				$('.percentage').addClass("active");
 			});
-			
-		});
+			});	
 
 		//]]&gt;
 	</script>

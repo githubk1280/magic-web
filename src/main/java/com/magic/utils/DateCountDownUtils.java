@@ -51,4 +51,8 @@ public class DateCountDownUtils {
 					start.get(Calendar.DAY_OF_MONTH), i));
 		}
 	}
+	
+	public static int getInt(String value) {
+		return Integer.parseInt(value);
+	}
 }

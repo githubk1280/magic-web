@@ -7,8 +7,19 @@
 	<packaging>war</packaging>
 	<properties>
 		<springframework.version>3.2.6.RELEASE</springframework.version>
+		<webmagic-version>0.5.2</webmagic-version>
 	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>us.codecraft</groupId>
+			<artifactId>webmagic-core</artifactId>
+			<version>${webmagic-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>us.codecraft</groupId>
+			<artifactId>webmagic-extension</artifactId>
+			<version>${webmagic-version}</version>
+		</dependency>
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>

@@ -20,4 +20,5 @@ maven-ant-tasks.jar
 test-output
 classes
 /target
+/src/main/resources/pros/db-mysql.properties
 .gitignore

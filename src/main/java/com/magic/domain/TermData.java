@@ -1,12 +1,11 @@
 package com.magic.domain;
 
-import java.util.Date;
-
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
-public class TermData {
-	private Date historyDate;
+@EqualsAndHashCode(callSuper=false)
+public class TermData extends BaseKuai3Data {
 	private int term1;
 	private int term2;
 	private int term3;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.magic.dao.CaiPiaoDao">
+<mapper namespace="com.magic.dao.Kuai3Dao">
 	<select id="queryTermDatas" resultMap="queryTermDatasResult"
 		parameterType="map">
 		SELECT * FROM kuai3termdata
@@ -96,6 +96,43 @@
 		<result property="term79" column="term79" />
 		<result property="term80" column="term80" />
 	</resultMap>
+
+	<!-- percentage start -->
+	<select id="queryPercentageDatas" resultMap="queryPercentageDatasResult"
+		parameterType="map">
+		SELECT * FROM kuai3backnumpercentage
+		WHERE
+		target=#{target}
+		AND
+		historyDate
+		BETWEEN
+		#{startDate}
+		AND
+		#{endDate}
+	</select>
+
+	<resultMap type="com.magic.domain.PercentageData" id="queryPercentageDatasResult">
+		<result property="historyDate" column="historyDate" />
+		<result property="target" column="target" />
+		<result property="targetHit" column="targetHit" />
+		<result property="num3" column="num3" />
+		<result property="num4" column="num4" />
+		<result property="num5" column="num5" />
+		<result property="num6" column="num6" />
+		<result property="num7" column="num7" />
+		<result property="num8" column="num8" />
+		<result property="num9" column="num9" />
+		<result property="num10" column="num10" />
+		<result property="num11" column="num11" />
+		<result property="num12" column="num12" />
+		<result property="num13" column="num13" />
+		<result property="num14" column="num14" />
+		<result property="num15" column="num15" />
+		<result property="num16" column="num16" />
+		<result property="num17" column="num17" />
+		<result property="num18" column="num18" />
+	</resultMap>
+	<!-- percentage end -->
 
 </mapper>
 
