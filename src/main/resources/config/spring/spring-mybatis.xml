@@ -21,7 +21,7 @@ http://www.springframework.org/schema/context
 
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 <!-- 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property> -->
-		<property name="basePackage" value="com.tmrasys.dao"></property>
+		<property name="basePackage" value="com.magic.dao"></property>
 	</bean>
 
 

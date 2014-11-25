@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.magic.dao.CaiPiaoDao">
+	<select id="queryTermDatas" resultMap="queryTermDatasResult"
+		parameterType="map">
+		SELECT * FROM kuai3termdata
+		WHERE
+		historyDate
+		BETWEEN
+		#{startDate}
+		AND
+		#{endDate}
+	</select>
+
+	<resultMap type="com.magic.domain.TermData" id="queryTermDatasResult">
+		<result property="historyDate" column="historyDate" />
+		<result property="term1" column="term1" />
+		<result property="term2" column="term2" />
+		<result property="term3" column="term3" />
+		<result property="term4" column="term4" />
+		<result property="term5" column="term5" />
+		<result property="term6" column="term6" />
+		<result property="term7" column="term7" />
+		<result property="term8" column="term8" />
+		<result property="term9" column="term9" />
+		<result property="term10" column="term10" />
+		<result property="term11" column="term11" />
+		<result property="term12" column="term12" />
+		<result property="term13" column="term13" />
+		<result property="term14" column="term14" />
+		<result property="term15" column="term15" />
+		<result property="term16" column="term16" />
+		<result property="term17" column="term17" />
+		<result property="term18" column="term18" />
+		<result property="term19" column="term19" />
+		<result property="term20" column="term20" />
+		<result property="term21" column="term21" />
+		<result property="term22" column="term22" />
+		<result property="term23" column="term23" />
+		<result property="term24" column="term24" />
+		<result property="term25" column="term25" />
+		<result property="term26" column="term26" />
+		<result property="term27" column="term27" />
+		<result property="term28" column="term28" />
+		<result property="term29" column="term29" />
+		<result property="term30" column="term30" />
+		<result property="term31" column="term31" />
+		<result property="term32" column="term32" />
+		<result property="term33" column="term33" />
+		<result property="term34" column="term34" />
+		<result property="term35" column="term35" />
+		<result property="term36" column="term36" />
+		<result property="term37" column="term37" />
+		<result property="term38" column="term38" />
+		<result property="term39" column="term39" />
+		<result property="term40" column="term40" />
+		<result property="term41" column="term41" />
+		<result property="term42" column="term42" />
+		<result property="term43" column="term43" />
+		<result property="term44" column="term44" />
+		<result property="term45" column="term45" />
+		<result property="term46" column="term46" />
+		<result property="term47" column="term47" />
+		<result property="term48" column="term48" />
+		<result property="term49" column="term49" />
+		<result property="term50" column="term50" />
+		<result property="term51" column="term51" />
+		<result property="term52" column="term52" />
+		<result property="term53" column="term53" />
+		<result property="term54" column="term54" />
+		<result property="term55" column="term55" />
+		<result property="term56" column="term56" />
+		<result property="term57" column="term57" />
+		<result property="term58" column="term58" />
+		<result property="term59" column="term59" />
+		<result property="term60" column="term60" />
+		<result property="term61" column="term61" />
+		<result property="term62" column="term62" />
+		<result property="term63" column="term63" />
+		<result property="term64" column="term64" />
+		<result property="term65" column="term65" />
+		<result property="term66" column="term66" />
+		<result property="term67" column="term67" />
+		<result property="term68" column="term68" />
+		<result property="term69" column="term69" />
+		<result property="term70" column="term70" />
+		<result property="term71" column="term71" />
+		<result property="term72" column="term72" />
+		<result property="term73" column="term73" />
+		<result property="term74" column="term74" />
+		<result property="term75" column="term75" />
+		<result property="term76" column="term76" />
+		<result property="term77" column="term77" />
+		<result property="term78" column="term78" />
+		<result property="term79" column="term79" />
+		<result property="term80" column="term80" />
+	</resultMap>
+
+</mapper>
+

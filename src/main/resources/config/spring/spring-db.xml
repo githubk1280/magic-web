@@ -12,8 +12,8 @@ http://www.springframework.org/schema/context
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="${mysql.driverClass}"></property>
 		<property name="url" value="${jdbc.url}"></property>
-		<property name="username" value="${username}"></property>
-		<property name="password" value="${password}"></property>
+		<property name="username" value="${jdbc.username}"></property>
+		<property name="password" value="${jdbc.password}"></property>
 	</bean>
 
 

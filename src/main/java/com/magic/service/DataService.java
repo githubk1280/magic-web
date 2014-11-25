@@ -1,18 +1,20 @@
 package com.magic.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.magic.dao.ProjectDao;
-import com.magic.domain.Project;
+import com.magic.dao.CaiPiaoDao;
+import com.magic.domain.TermData;
 
 @Service
 public class DataService {
 	@Autowired
-	ProjectDao projectDao;
+	private CaiPiaoDao caiPiaoDao;
 
-	public Project loadProjectById(int projectId) {
-		return projectDao.loadProjectById(projectId);
+	public List<TermData> queryTermDatas(String startDate, String endDate) {
+		return caiPiaoDao.queryTermDatas(startDate, endDate);
 	}
-	
+
 }
