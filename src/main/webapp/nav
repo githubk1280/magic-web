@@ -8,6 +8,9 @@
 				<li class="fetch">
 					<a href="filldata.jsp">Fetch</a>
 				</li>
+				<li class="fetchverify">
+					<a href="filldataverify.jsp">FetchVerify</a>
+				</li>
 				<li class="dropdown pull-right">
 					 <a href="#" data-toggle="dropdown" class="dropdown-toggle">下拉<strong class="caret"></strong></a>
 					<ul class="dropdown-menu">

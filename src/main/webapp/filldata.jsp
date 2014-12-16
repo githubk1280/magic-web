@@ -79,11 +79,14 @@
 					url : 'crawl/'+val,
 					type : 'get',
 					success : function(response) {
-						var resArray = JSON.parse(JSON.parse(JSON.parse(response).data));
-						renderPercentageChart(resArray);
+						if(JSON.parse(response).success == true){
+							alert(JSON.parse(JSON.parse(response).data).msg);
+						}else{
+							alert(JSON.parse(response).data);
+						}
 					},
 					error : function(err) {
-						alert(err.responseText);
+						alert("Failed please re-try \n "+ err.status+" "+err.statusText);
 					}
 				});
 			});		
